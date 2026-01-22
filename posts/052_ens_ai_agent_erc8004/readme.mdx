@@ -1,0 +1,111 @@
+export const PreContent = () => (
+  <p className="font-sans font-normal">
+    ENS's role when it comes to AI agents focuses on naming and discovery through an open, standard namespace. As new proposals take shape, here's a common reference point for thinking about how onchain agents can be identifiable in a consistent and verifiable way.
+  </p>
+)
+
+AI agents are quickly evolving from passive tools into autonomous actors. Unlike traditional AI tools, an AI agent can plan actions, execute transactions, interact with external services, and even coordinate with other agents. And recent announcements from [Google](https://developers.google.com/merchant/ucp), [Coinbase](https://www.coinbase.com/en-de/developer-platform/products/x402), and [Stripe](https://stripe.com/blog/developing-an-open-standard-for-agentic-commerce) make clear that agentic commerce is no longer just a futuristic idea.
+
+Before one can determine which agent framework will "win," you must take a step back and ask: which shared standards are needed for any of them to work safely at scale? One significant bottleneck facing the current agent economy is having no credible way of *creating* and *verifying* an agent's identity. Without a consistent identity layer, it becomes increasingly difficult to answer basic questions of how to securely pay an agent or how to know which version is being used.
+
+As agents start acting on different interfaces like wallets, chat apps, and agent-to-agent networks, it becomes harder to know whether a user is interacting with the right agent in the intended context. This introduces real trust and security risks for users.
+
+An agent's identity needs to serve multiple roles at once. It must act as a wallet address, a reference point for APIs, a record of AI change-logs, and a source of verifications. An agent stack that fails to unify these functions in its agent naming layer will most likely struggle to scale safely. 
+
+A reliable agent identity system should be:
+
+1. **Portable**
+    The same agent identity should resolve consistently across wallets, applications, blockchains and networks.
+    
+2. **Open**
+    No single company or actor should be in control of agent naming or agent discovery. Open source & data practice is essential to avoid ecosystem fragmentation and guarantee neutrality.
+    
+3. **Composable**
+    Agent naming shouldn't be limited to specific environments or terms. It should be interoperable with the many protocols and standards that exist and will come to exist.
+    
+4. **Human-readable**
+    While agents interact with agents, human-readable names provide the usability of an agent for human actors.
+    
+
+These requirements mirror past needs that ENS already solved for user addresses, smart contracts, and organizational identity. ENS's long-term success wasn't due to forcing one standard, but because it provides a simple yet versatile global naming layer for wallets and accounts, that everyone could safely build on.
+
+### Why agent identity matters
+
+Every user nowadays can be defined as familiar with LLMs that respond to prompts. AI agents go further by using tools themselves: calling APIs, executing transactions, and interacting amongst each other. In an environment where agents can operate across applications and chains, identity becomes the one constant that allows all these actions to remain intelligible.
+
+While centralized platforms are still experimenting with their agent strategies, the blockchain world is already making early forms of agent-to-agent interactions possible. Agents can collect onchain data, evaluate market conditions, and send transactions autonomously. 
+
+The quickly developing onchain agent space makes the absence of a universal identity layer even more evident. If agents can transact they must also be identifiable in a consistent and verifiable way. Therefore, the question is not whether agent identities will exist, but who will control them. 
+
+If agent naming is owned by centralized systems, agents risk being limited within specific ecosystems, with reputations and verifications fragmented on platforms where trust is once again managed by intermediaries. 
+
+A neutral and transparent naming layer offers the different path. It allows multiple agent frameworks to coexist and users to move between interfaces without losing context. Agents can build both positive or negative reputations that are consistent no matter the app context.
+
+This is where Ethereum Name Service comes into play.
+
+### A universal naming layer for humans and non-humans
+
+Since 2017, ENS has provided human-readable names to translate complex hexadecimal addresses. Over time, ENS names have become a foundational UX primitive for major wallets, exchanges, social apps, decentralized websites, and contract naming.
+
+All these use-cases have been fulfilled by ENS while remaining chain-agnostic, app-neutral, and, most importantly, open source.
+
+Eight years later, human-readable names are no longer reserved for humans only. As AI agents emerge as participants in onchain environments, ENS sits at the perfect intersection of blockchain and AI. ENS's existing commitment to neutrality, composability, and global accessibility makes it optimally suited to support agent identity without influencing agent commerce itself. From the perspective of a blockchain, humans, agents, and other systems are indistinguishable and all appear as addresses. ENS names allow additional, shared context to be attached to those addresses, making it possible for applications to distinguish between different kinds of onchain actors when needed.
+
+The agent stack today can be described as a combination of the following layers that act complementary to each other:
+
+1. Interaction protocols
+2. Payment and settlement
+3. Trust and reputation
+4. Identity and discovery
+
+ENS's credible neutrality becomes especially important when considering generic names for agent discovery. Generic names such as "agent.eth" can act as clear entry points into broader agent ecosystems, while delegated subnames like shop.agent.eth, trade.agent.eth, or verify.agent.eth allow large-scale naming and a neutral namespace. Subname delegation allows different teams and protocols to build on top of ENS and innovate independently, while still maintaining a shared, universal agent naming layer.
+
+For humans, ENS has historically served two core purposes with easy-to-use naming and a place to publish identity and metadata like contact information. In an onchain agent context, the same concept naturally expands to cover a wider set of machine-readable context. Beyond a name, agents need a way to express what they are doing, what they are capable of, which environments they operate in, and under which constraints.
+
+Agent identity may need to signal whether it is currently active, which actions it can perform on which chains, which rules it enforces, how it can be interacted with, what fees it charges, and how it can be audited or contacted by a human or another agent. Meanwhile, agent registries and frameworks can solve ranking, verification, and reputation and refer back to the same, recognizable agent identity.
+
+The versatility of ENS names provides a natural playfield for this information because it allows agents to attach verifiable context to a universally resolvable name.
+
+### Research, ideas, proposals
+
+As onchain agentic systems begin to move from experimentation toward real-world use, a broader question is emerging across the ecosystem. How should agents be identified and discovered in practice, especially as they operate across different applications and networks?
+
+There is no single answer yet, which is reflected in how protocol designers, wallet teams, infrastructure providers, and researchers are each approaching the problem. Some focus on registries and reputation, others on agent-to-agent standards or commerce flows. ENS appears repeatedly in these discussions not because it claims to solve every part of the problem, but because it already provides a shared naming standard that many of these ideas can build on.
+
+As new proposals take shape, this article would like to offer a common reference point for thinking about how agent identity can remain neutral and interoperable for all systems. The standards and ideas emerging today reflect the ecosystem actively testing and refining its principles, and offer a useful look into how agent identity and discovery are being discussed.
+
+#### ERC-8004
+
+The Ethereum Foundation, Google, MetaMask, and Coinbase are actively exploring how agents can interact trustlessly and crosschain. [ERC-8004](https://eips.ethereum.org/EIPS/eip-8004) addresses a deeper and more structural problem than payments or execution: how agents establish credibility over time.
+
+As agents begin to act autonomously on apps, chains, and marketplaces, trust can no longer be inferred from context or a platform affiliation. ERC-8004 responds to this by introducing a standardized, onchain trust framework made of three registries: Identity, Reputation, and Validation. Together, these registries allow agents to carry portable proofs of who they are, how they have performed, and whether their work has been independently verified.
+
+Without portable reputation, high-quality agents reset to zero every time they enter a new environment, while low-quality or malicious agents can repeatedly reintroduce themselves with minimal cost. ERC-8004 shifts this dynamic by making identity and performance interoperable and queryable on multiple platforms.
+
+The design of ERC-8004 reflects this goal, with compatibility on networks like Ethereum, Base, Polygon, and emerging non-EVM adaptations like Solana, which underlines the need for an identity system that isn't limited to a single chain.
+
+Within the Identity Registry, agents are represented as NFT-based identities that store core information. ENS names are treated as first-class identifiers, alongside wallet addresses and associated metadata. An agent's ENS name functions as the human-readable handle that can be resolved before evaluating reputation or validation data.
+
+#### x402: Payments
+
+The [x402 protocol](https://www.x402.org/), developed by Coinbase, focuses on one of the four layers discussed above: agent payments.
+
+Rather than collapsing identity, trust, and commerce into a single system, x402 deliberately scopes itself to how agents pay and get paid. In practice, this means handling authorization, settlement, and value transfer for agents and APIs, while complementary standards such as ERC-8004 address whether an agent is trustworthy enough to transact with in the first place.
+
+Payment rails must remain composable, and embedding identity or reputation directly into the payment layer would risk turning agent commerce into a closed system.
+
+Agents also need a way to express intent and policy around payments. An agent must be able to signal which assets it accepts, under what conditions it is willing to transact, whether there are constraints, and how payment behavior changes with environments.
+
+By connecting payment intent to an ENS name, an agent can publish human-readable, globally resolvable signals about how it expects to be paid. Wallets, applications, and other agents could resolve these signals before initiating an x402 flow, ensuring that payment execution aligns with the agent's declared rules.
+
+#### ERC-8122
+
+Prem Makeig (Unruggable) recently proposed [ERC-8122](https://ethereum-magicians.org/t/erc-8122-minimal-agent-registry/27405), a lightweight, deployable onchain registry for discovering AI agents, called the Minimal Agent Registry. In his own research, approaches like ERC-8004 define an ERC-721-based agent registry as one per chain. Many use cases instead need custom registry deployments, such as curated collections, specialized domains, or fixed-supply registries.
+
+### Agent identity is shared infrastructure
+
+ENS doesn't need to create an agent framework. Instead, we need to do what we already do well and continue to provide names that are secure and resolve everywhere. With the upcoming launch of ENSv2, every name will have its own registry, which will allow for more flexibility in creating agent registries on a name by name basis.
+
+As agents begin to transact, build reputation, and interact across systems, identity becomes a shared need. Payments, trust frameworks, and registries can evolve independently, but they will all rely on the ability to consistently refer to the same agent over time.
+
+The ideas explored throughout this article reflect an ecosystem still in motion. Standards like ERC-8004, payment rails such as x402, and early proposals like ERC-8122 all approach the problem from different angles. What they have in common is the assumption that identity must remain portable and neutral if agents are to operate beyond isolated environments.

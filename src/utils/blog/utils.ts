@@ -23,6 +23,7 @@ const tagMap: Record<string, string> = {
   'ens-v2': 'ENSv2',
   dns: 'DNS',
   icann: 'ICANN',
+  ai: 'AI',
 }
 
 export const formatTag = (tag: string) => {
